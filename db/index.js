@@ -44,50 +44,6 @@ const connectDB = async () => {
 
   }
 }
-/////////////////
-const friendSchema = new Schema({
-  name: String,
-  age: Number,
-  netWorth: Number,
-  isCool: Boolean,
-  cars: Array,
-  status:{
-      account: String,
-      casAtHand: Number,
-      hasPiggyVest: Boolean
-  },
-  relationshipHistory:[{
-      name: String,
-      startData: Date,
-      endDate: Date,
-      isActive: Boolean
-  }]
-});
-const Friend = mongoose.model('Friend', friendSchema);
-
-
-////create
-
-////read
-//find({}) -all
-//find(query)
-//find(id)
-//find and update
-
-//create new document in friends collection:
-Friend.create({
-  name: "Kingabesh",
-  age: 40,
-  netWorth:40000000000,
-  isCool: true,
-}, function(err, friend){
-  if(err) {
-      console.log({err})
-  }else {
-      console.log({newFriend: friend})
-
-  }
-})
 
 
 module.exports = connectDB;
